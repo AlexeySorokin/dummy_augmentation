@@ -38,8 +38,6 @@ libalign_getpairs_advance = libalign.getpairs_advance
 libalign_getpairs_advance.restype = c_void_p
 libalign_align_init = libalign.align_init
 libalign_align_init.restype = None
-libalign_align_init_with_seed = libalign.align_init_with_seed
-libalign_align_init.restype = None
 
 class Aligner:
 

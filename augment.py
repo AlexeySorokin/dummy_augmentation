@@ -104,7 +104,7 @@ args = parser.parse_args()
 
 DATA_PATH = args.datapath
 L2 = args.language
-LOW_PATH = os.path.join(DATA_PATH, L2+"-train")
+LOW_PATH = os.path.join(DATA_PATH, L2+"-train-low")
 DEV_PATH = os.path.join(DATA_PATH, L2+"-dev")
 
 N = args.examples
@@ -137,6 +137,6 @@ i = [c for c in i if c]
 o = [c for c in o if c]
 t = [c for c in t if c]
 
-with codecs.open(os.path.join(DATA_PATH,L2+"-hall"), 'w', 'utf-8') as outp:
+with codecs.open(os.path.join(DATA_PATH,L2+f"-hall-{N}"), 'w', 'utf-8') as outp:
 	for k in range(min(N, len(i))):
 		outp.write(''.join(i[k]) + '\t' + ''.join(o[k]) + '\t' + ';'.join(t[k]) + '\n')
